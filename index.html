@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- <style>
+      #currentQ_a {
+        width: 60px;
+      }
+      label {
+        width: 100%;
+        display: block;
+      } -->
+    </style>
+  </head>
+  <body>
+    <div id="quizzz">
+      <div class="jumbotron p-0">
+        <nav
+          class="btn navbar navbar-light d-flex justify-content-left justify-self-left"
+        >
+          <a onclick="displaySB()" role="button"> Show Score Board </a>
+          <!-- timer -->
+          <div id="countDown"></div>
+        </nav>
+
+        <h1 class="display-4 font-weight-bold text-center m-0 p-0">Quiz</h1>
+        <div class="d-flex justify-content-center">
+          <a
+            onclick="startQuiz()"
+            id="start"
+            class="btn btn-primary btn-md items-center"
+            href="#"
+            role="button"
+            >Start Quiz!</a
+          >
+        </div>
+      </div>
+      <div id="currentQ" class="d-none">
+        <h2 id="currentQ_q" class="d-flex justify-content-center"></h2>
+        <div
+          id="currentQ_a"
+          class="d-flex justify-self-center justify-content-around "
+        ></div>
+        <div class="d-flex justify-content-center">
+          <a
+            onclick="submit()"
+            class="btn btn-primary btn-md items-center"
+            href="#"
+            role="button"
+            >Submit!</a
+          >
+        </div>
+      </div>
+      <div id="yourScore" class="scoreDisplay justify-content-center d-none">
+        <p id="score" class="d-flex justify-content-center display-6"></p>
+        <form class="form-inline mx-sm justify-content-center">
+          <label for="name">Enter Your Name</label>
+          <input type="text" id="playerName" placeholder="Name" />
+          <button onclick="dasScore()" class="btn btn-primary mb-2">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+    <div id="scoreBoard" class="d-none">
+      <div class="jumbotron p-0">
+        <h1
+          class="display-6 font-weight-bold text-center m-0 p-0 d-flex justify-content-center justify-self-center"
+        >
+          Score Board
+        </h1>
+      </div>
+      <table id="leTableau" class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Score</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="d-flex justify-content-center justify-self-center mx-2">
+        <a
+          class="btn btn-primary btn-md items-center justify-content-center"
+          onclick="goBack()"
+          >Return to Quiz Page</a
+        >
+
+        <a
+          class="btn btn-danger btn-md items-center justify-content-center mx-2"
+          onclick="x_Row()"
+        >
+          Delete Entry</a
+        >
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
